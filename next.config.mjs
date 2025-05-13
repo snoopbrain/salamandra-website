@@ -1,4 +1,6 @@
 // next.config.mjs
+import path from 'path'; // Añade esta línea al inicio
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
@@ -9,13 +11,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,  // Desactiva optimización si usas imágenes locales
-    domains: ['localhost'],  // Permite imágenes de tu Strapi local
+    unoptimized: true,
+    domains: ['localhost'],
   },
-  // Opcional: Configuración para subir a Vercel
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../../'),
-  }
-}
+};
 
 export default nextConfig;
